@@ -38,10 +38,6 @@ $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-hea
 
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
-# Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
-
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
@@ -70,6 +66,10 @@ PRODUCT_COPY_FILES += \
 # Input device
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc
+
+# IR
+PRODUCT_PACKAGES += \
+    consumerir.msm8974
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -102,7 +102,12 @@ PRODUCT_COPY_FILES += \
     device/samsung/mondrianwifi/rootdir/etc/init.slim.kernel.sh:system/bin/init.slim.kernel.sh
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    av.offload.enable=false
+    av.streaming.offload.enable=false
+
+# Permissions
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
+    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 
 # Ramdisk
 PRODUCT_PACKAGES += \
