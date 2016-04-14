@@ -5,6 +5,3 @@
 /sys/devices/virtual/sec/sec_touchkey/tsp_keys_enabled u:object_r:sysfs_input_file:s0
 
 /system/bin/thermal-engine            u:object_r:thermal-engine_exec:s0
-
-# Swap labelling
-/dev/block/vnswap0                 u:object_r:swap_block_device:s0
