@@ -146,9 +146,6 @@ on post-fs-data
     chown system camera /sys/class/flash/flash/flash_power
     chmod 660 /sys/class/flash/flash/flash_power
 
-    # Slim kernel config permissions
-    chmod 0700 /system/bin/init.slim.kernel.sh
-
 on boot
 
 # MUIC
@@ -539,10 +536,3 @@ service init-input-sh /system/bin/sh /init.input.sh
     user root
     group root
     oneshot
-
-# Start Slim Mondrianwifi kernel configuration
-service slim-kernel /system/bin/sh /system/bin/init.slim.kernel.sh
-     class late_start
-     user root
-     group root system
-     oneshot
