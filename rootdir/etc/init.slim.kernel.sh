@@ -48,21 +48,5 @@ fi
 echo `date +"%F %R:%S : Enable intellidemand..."` >>$log_file
 echo 1 > /sys/module/intelli_plug/parameters/intelli_plug_active
 
-# Activate zSwap with 512Mb
-if [ -e /sys/block/vnswap0/disksize ] ; then
-  swapoff /dev/block/vnswap0
-  echo 536870912 > /sys/block/vnswap0/disksize
-  mkswap /dev/block/vnswap0
-  swapon /dev/block/vnswap0
-  echo `date +"%F %R:%S : 512Mb zSwap support enabled."` >>$log_file
-else
-  echo `date +"%F %R:%S : vnswap/disksize is already set, skipping."` >>$log_file
-fi
-
-# Set swappiness to 80
-echo 80 > /proc/sys/vm/swappiness;
-echo `date +"%F %R:%S : Swappiness set to 80."` >>$log_file
-
-
 echo `date +"%F %R:%S : End of script"` >>$log_file
 chmod 644 $log_file
