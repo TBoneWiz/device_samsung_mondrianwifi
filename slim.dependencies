@@ -10,11 +10,6 @@
     "branch": "mm6.0"
   },
   {
-    "repository": "SlimRoms/device_qcom_common",
-    "target_path": "device/qcom/common",
-    "branch": "mm6.0"
-  },
-  {
     "repository": "SlimRoms/kernel_samsung_mondrianwifi",
     "target_path": "kernel/samsung/mondrianwifi",
     "branch": "mm6.0"
