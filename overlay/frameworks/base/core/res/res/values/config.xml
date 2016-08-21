@@ -252,4 +252,7 @@
 
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
 
+    <!-- Disable IpReachability monitor -->
+    <bool name="config_wifi_ipreachability_monitor">false</bool>
+
 </resources>
