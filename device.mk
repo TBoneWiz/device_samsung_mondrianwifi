@@ -148,5 +148,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
+# Screen binary
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/screen/screen:system/bin/screen
+
 # Common msm8974
 $(call inherit-product, device/samsung/msm8974-common/msm8974.mk)
