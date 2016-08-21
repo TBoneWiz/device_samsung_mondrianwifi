@@ -10,7 +10,7 @@
     "branch": "mm6.0"
   },
   {
-    "repository": "SlimRoms/kernel_samsung_mondrianwifi",
+    "repository": "TBoneWiz/kernel_samsung_mondrianwifi",
     "target_path": "kernel/samsung/mondrianwifi",
     "branch": "mm6.0"
   },
