@@ -27,4 +27,8 @@
 
     <!-- Whether rotation lock shows up in quick settings or not -->
     <bool name="quick_settings_show_rotation_lock">true</bool>
+
+    <!-- The tiles to display in QuickSettings -->
+    <string name="quick_settings_tiles" translatable="false">wifi,bt,location,rotation,airplane,brightness,flashlight,cast</string>
+
 </resources>
