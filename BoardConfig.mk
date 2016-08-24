@@ -57,6 +57,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
+BOARD_HEALTHD_CUSTOM_CHARGER_RES := device/samsung/mondrianwifi/charger/images
 
 # GPS
 TARGET_NO_RPC := true
