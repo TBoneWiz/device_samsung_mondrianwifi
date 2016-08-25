@@ -255,4 +255,7 @@
     <!-- Disable IpReachability monitor -->
     <bool name="config_wifi_ipreachability_monitor">false</bool>
 
+    <!-- Enable persistent notification for USB OTG drives -->
+    <bool name="config_persistUsbDriveNotification">true</bool>
+
 </resources>
