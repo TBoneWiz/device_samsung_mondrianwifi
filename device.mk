@@ -152,17 +152,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/screen/screen:system/bin/screen
 
-ifneq ($(TARGET_ARCH),arm64)
-# Viper4Android
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/Viper4Android/addon.d/23-v4a.sh:system/addon.d/23-v4a.sh \
-    $(LOCAL_PATH)/Viper4Android/etc/init.d/50viper:system/etc/init.d/50viper \
-    $(LOCAL_PATH)/Viper4Android/lib/soundfx/libv4a_fx_ics.so:system/lib/soundfx/libv4a_fx_ics.so \
-    $(LOCAL_PATH)/Viper4Android/xbin/seinfo:system/xbin/seinfo \
-    $(LOCAL_PATH)/Viper4Android/xbin/sepolicy-inject:system/xbin/sepolicy-inject \
-    $(LOCAL_PATH)/Viper4Android/xbin/sesearch:system/xbin/sesearch \
-    $(LOCAL_PATH)/Viper4Android/priv-app/Viper/ViperFX.apk:system/priv-app/Viper/ViperFX.apk
-endif
-
 # Common msm8974
 $(call inherit-product, device/samsung/msm8974-common/msm8974.mk)
