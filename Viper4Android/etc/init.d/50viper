@@ -1,0 +1,9 @@
+#!/system/bin/sh
+
+# setools-android manage su policies in order to get ViPER4Android to work with enforced Selinux
+# setools-android is open source. Use it insted Chainfire's SU as supolicy (part of Chanfire's SU) is CLOSED SOURCE!
+# Closed source root apps are BIG SECURITY RISC!!! 
+
+/system/xbin/sepolicy-inject -s mediaserver -t mediaserver_tmpfs -c file -p read -l
+/system/xbin/sepolicy-inject -s mediaserver -t mediaserver_tmpfs -c file -p write -l
+/system/xbin/sepolicy-inject -s mediaserver -t mediaserver_tmpfs -c file -p execute -l
