@@ -148,6 +148,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
+# SuperSU
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/SuperSU/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    $(LOCAL_PATH)/SuperSU/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # Screen binary
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/screen/screen:system/bin/screen
