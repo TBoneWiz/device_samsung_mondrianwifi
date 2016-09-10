@@ -51,6 +51,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    camera.msm8974 \
     libshim_qcopt \
     libxml2
 
