@@ -17,7 +17,7 @@
   {
     "repository": "TBoneWiz/proprietary_vendor_samsung/mondrianwifi",
     "target_path": "vendor/samsung/mondrianwifi",
-    "branch": "mm6.0"
+    "branch": "cm-13.0"
   },
   {
     "repository": "SlimRoms/hardware_samsung",
