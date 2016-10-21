@@ -170,5 +170,8 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/screen/screen:system/bin/screen
 
+# Custom bootanimation
+PRODUCT_BOOTANIMATION := device/samsung/mondrianwifi/bootanimation/bootanimation.zip
+
 # Common msm8974
 $(call inherit-product, device/samsung/msm8974-common/msm8974.mk)
