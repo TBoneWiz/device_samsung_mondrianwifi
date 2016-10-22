@@ -49,6 +49,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libboringssl-compat
 
+# Apache Hack
+PRODUCT_COPY_FILES += \
+    prebuilts/sdk/org.apache.http.legacy/org.apache.http.legacy.jar:/system/framework/org.apache.http.legacy.jar
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8974 \
