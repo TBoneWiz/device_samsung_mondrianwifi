@@ -6,6 +6,8 @@
 
 /system/bin/thermal-engine            u:object_r:thermal-engine_exec:s0
 
+# mpdecision
+/data/system/default_values           u:object_r:mpctl_data_file:s0
 
 # Surfaceflinger
 /sys/devices/virtual/graphics/fb1/format_3d            -- u:object_r:surfaceflinger_sysfs:s0
