@@ -12,3 +12,4 @@ type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket
 
 # This sucks but needed for libmmjpeg
 allow mm-qcamerad system_file:file execmod;
+allow mm-qcamerad sysfs:file write;
