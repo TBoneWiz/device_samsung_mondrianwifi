@@ -1,0 +1,2 @@
+allow zygote system_server:binder { call transfer };
+allow zygote zygote_tmpfs:file execute;
