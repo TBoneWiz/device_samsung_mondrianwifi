@@ -258,7 +258,4 @@
     <!-- Enable persistent notification for USB OTG drives -->
     <bool name="config_persistUsbDriveNotification">true</bool>
 
-    <!-- Force 90 degree screen rotation on HDMI/MHL connect -->
-    <integer name="config_undockedHdmiRotation">90</integer>
-
 </resources>
