@@ -88,6 +88,15 @@ on boot
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
+    # MDP idle notifier
+    chown system graphics /sys/class/graphics/fb0/idle_time
+    chown system graphics /sys/class/graphics/fb0/mode
+    chown system graphics /sys/class/graphics/fb0/modes
+
+    chmod 0664 /sys/class/graphics/fb0/idle_time
+    chmod 0664 /sys/class/graphics/fb0/mode
+    chmod 0664 /sys/class/graphics/fb0/modes
+
     # Create symlink for fb1 as HDMI
     symlink /dev/graphics/fb1 /dev/graphics/hdmi
 
@@ -606,7 +615,6 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpufreq/conservative/ignore_nice_load 1
     write /sys/devices/system/cpu/cpufreq/conservative/sampling_down_factor 1
     write /sys/devices/system/cpu/cpufreq/conservative/sampling_rate 180000
-    write /sys/devices/system/cpu/cpufreq/conservative/sampling_rate_min 180000
     write /sys/devices/system/cpu/cpufreq/conservative/up_threshold 90
 
     # Interactive governor
@@ -623,7 +631,6 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpufreq/interactive/target_loads "85 1500000:90 1800000:70"
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 40000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 30000
-    write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 100000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
 
     # CPU Boost driver
@@ -634,14 +641,14 @@ on property:sys.boot_completed=1
     write /sys/module/cpu_boost/parameters/input_boost_ms 500
 
     # cpufreq
-    write /devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2265600
-    write /devices/system/cpu/cpu1/cpufreq/scaling_max_freq 2265600
-    write /devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2265600
-    write /devices/system/cpu/cpu3/cpufreq/scaling_max_freq 2265600
-    write /devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
-    write /devices/system/cpu/cpu1/cpufreq/scaling_min_freq 300000
-    write /devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
-    write /devices/system/cpu/cpu3/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2265600
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 2265600
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2265600
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 2265600
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 300000
 
     # End of governor configuration
     write /sys/module/msm_thermal/core_control/enabled 1
@@ -655,9 +662,6 @@ on property:sys.boot_completed=1
     chmod 664 /sys/devices/system/cpu/cpu2/online
     chmod 664 /sys/devices/system/cpu/cpu3/online
     write /dev/cpuctl/cpu.notify_on_migrate 1
-
-    # Configure the GPU
-    write 320000000 /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/devfreq/min_freq
 
     # Post boot services
     start mpdecision
@@ -780,7 +784,6 @@ on ffbm
 on property:sys.perf.profile=0
     stop mpdecision
     write /sys/module/msm_thermal/core_control/enabled 0
-    write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
@@ -796,7 +799,6 @@ on property:sys.perf.profile=0
 on property:sys.perf.profile=1
     stop mpdecision
     write /sys/module/msm_thermal/core_control/enabled 0
-    write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
@@ -812,7 +814,6 @@ on property:sys.perf.profile=1
 on property:sys.perf.profile=2
     stop mpdecision
     write /sys/module/msm_thermal/core_control/enabled 0
-    write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
