@@ -26,7 +26,7 @@ PRODUCT_CHARACTERISTICS := tablet
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := xlarge
+PRODUCT_AAPT_CONFIG := xlarge large
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Boot animation
