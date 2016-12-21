@@ -71,6 +71,7 @@ BOARD_HARDWARE_CLASS += device/samsung/mondrianwifi/cmhw
 # Graphics
 TARGET_HAVE_NEW_GRALLOC := true
 BOARD_USES_LEGACY_MMAP := true
+TARGET_HAS_HH_VSYNC_ISSUE := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
