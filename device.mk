@@ -40,10 +40,19 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
+
+ifeq ($(SLIM_FULL),true)
+# Use standard audio_effects.conf for full build
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_effects_default.conf:system/vendor/etc/audio_effects.conf
+else
+# Use custom audio_effects.conf for essential build (required for Viper4Android)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf
+endif
 
 # BoringSSL Hack
 PRODUCT_PACKAGES += \
@@ -153,10 +162,19 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
+# SuperSU, screen, custom bootanimation and Viper4Android are present only in essential build (default)
+ifneq ($(SLIM_FULL),true)
 # SuperSU
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/SuperSU/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
     $(LOCAL_PATH)/SuperSU/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
+# Screen binary
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/screen/screen:system/bin/screen
+
+# Custom bootanimation
+PRODUCT_BOOTANIMATION := device/samsung/mondrianwifi/bootanimation/bootanimation.zip
 
 ifneq ($(TARGET_ARCH),arm64)
 # Viper4Android
@@ -169,13 +187,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/Viper4Android/xbin/sesearch:system/xbin/sesearch \
     $(LOCAL_PATH)/Viper4Android/priv-app/Viper/ViperFX.apk:system/priv-app/Viper/ViperFX.apk
 endif
-
-# Screen binary
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/screen/screen:system/bin/screen
-
-# Custom bootanimation
-PRODUCT_BOOTANIMATION := device/samsung/mondrianwifi/bootanimation/bootanimation.zip
+endif
 
 # Common msm8974
 $(call inherit-product, device/samsung/msm8974-common/msm8974.mk)
