@@ -663,6 +663,9 @@ on property:sys.boot_completed=1
     chmod 664 /sys/devices/system/cpu/cpu3/online
     write /dev/cpuctl/cpu.notify_on_migrate 1
 
+    # Enable aggressive multiprocessor savongs
+    write /sys/devices/system/cpu/sched_mc_power_savings 2
+
     # Post boot services
     start mpdecision
 
