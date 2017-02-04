@@ -663,11 +663,18 @@ on property:sys.boot_completed=1
     chmod 664 /sys/devices/system/cpu/cpu3/online
     write /dev/cpuctl/cpu.notify_on_migrate 1
 
-    # Enable aggressive multiprocessor savongs
-    write /sys/devices/system/cpu/sched_mc_power_savings 2
+    # Enable multiprocessor savings
+    write /sys/devices/system/cpu/sched_mc_power_savings 1
+
+    # Kill mpdecision
+    setprop ctl.stop mpdecision
+    stop mpdecision
 
     # Post boot services
-    start mpdecision
+    # start mpdecision
+
+    # Start intelli_plug
+    write /sys/module/intelli_plug/parameters/intelli_plug_active 1
 
 service hdmid /system/bin/hdmid
     class late_start
@@ -785,7 +792,7 @@ on ffbm
 
 # Powersave
 on property:sys.perf.profile=0
-    stop mpdecision
+    # stop mpdecision
     write /sys/module/msm_thermal/core_control/enabled 0
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
@@ -796,11 +803,11 @@ on property:sys.perf.profile=0
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor conservative
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "powersave"
     write /sys/module/msm_thermal/core_control/enabled 1
-    start mpdecision
+    # start mpdecision
 
 # Balanced
 on property:sys.perf.profile=1
-    stop mpdecision
+    # stop mpdecision
     write /sys/module/msm_thermal/core_control/enabled 0
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
@@ -811,11 +818,11 @@ on property:sys.perf.profile=1
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
     write /sys/module/msm_thermal/core_control/enabled 1
-    start mpdecision
+    # start mpdecision
 
 # High performance
 on property:sys.perf.profile=2
-    stop mpdecision
+    # stop mpdecision
     write /sys/module/msm_thermal/core_control/enabled 0
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
