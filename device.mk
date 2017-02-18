@@ -162,11 +162,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
-# SuperSU, screen, custom bootanimation and Viper4Android are present only in essential build (default)
+# SuperSU, BusyBox, screen binary, custom bootanimation and Viper4Android are present only in essential build (default)
 ifneq ($(SLIM_FULL),true)
 # SuperSU
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/SuperSU/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    $(LOCAL_PATH)/BusyBox/UPDATE-BusyBox.zip:system/addon.d/UPDATE-BusyBox.zip \
     $(LOCAL_PATH)/SuperSU/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # Screen binary
