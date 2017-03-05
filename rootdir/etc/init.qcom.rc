@@ -47,6 +47,16 @@ on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
+    # SSR Setup
+    # Don't crash on ADSP
+    write /sys/bus/msm_subsys/devices/subsys0/restart_level "related"
+    # Don't crash on modem
+    write /sys/bus/msm_subsys/devices/subsys1/restart_level "related"
+    # Don't crash on wifi
+    write /sys/bus/msm_subsys/devices/subsys2/restart_level "related"
+    # Don't crash on venus
+    write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
+
 on boot
 
     mount debugfs /sys/kernel/debug /sys/kernel/debug
