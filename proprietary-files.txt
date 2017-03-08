@@ -47,6 +47,8 @@ etc/Speaker_cal.acdb
 #etc/firmware/wcd9320/wcd9320_mbhc.bin
 
 # Media
+lib/libOmxVdec.so
+lib/libOmxVdecHevc.so
 vendor/lib/libDivxDrm.so
 vendor/lib/libExtendedExtractor.so
 vendor/lib/libmmparser.so
@@ -79,6 +81,7 @@ vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libOpenCL.so
+vendor/lib/libOpenVG.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
