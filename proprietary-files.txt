@@ -66,6 +66,8 @@ framework/tcmclient.jar
 framework/tcmiface.jar
 
 # Adreno GPU
+lib/egl/egl.cfg
+lib/egl/libGLES_android.so
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
