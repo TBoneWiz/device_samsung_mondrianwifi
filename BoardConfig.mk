@@ -32,6 +32,10 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 TARGET_KERNEL_CONFIG := slim_mondrian_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/mondrianwifi
 
+# Boot animation
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+
 # External apps on SD
 TARGET_EXTERNAL_APPS = sdcard1
 
