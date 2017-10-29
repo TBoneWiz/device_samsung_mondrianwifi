@@ -23,4 +23,5 @@ ro.cwm.forbid_format=/boot,/firmware,/firmware-modem
 ro.cwm.forbid_mount=/boot
 
 # aptX
-persist.bt.a2dp_offload_cap=sbc-aptx
+persist.bt.a2dp_offload_cap=sbc-aptx-aptXHD
+persist.service.btui.use_aptx=1
