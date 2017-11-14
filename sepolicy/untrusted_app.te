@@ -4,3 +4,7 @@ allow untrusted_app storage_stub_file:dir { getattr };
 allow untrusted_app tombstone_data_file:dir { getattr };
 allow untrusted_app sysfs:file r_file_perms;
 
+# allow apps to read charging status
+allow untrusted_app sysfs_usb_supply:dir r_dir_perms;
+allow untrusted_app sysfs_usb_supply:file r_file_perms;
+
