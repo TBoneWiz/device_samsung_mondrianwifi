@@ -25,3 +25,6 @@ ro.cwm.forbid_mount=/boot
 # aptX
 persist.bt.a2dp_offload_cap=sbc-aptx-aptXHD
 persist.service.btui.use_aptx=1
+
+# SafetyNet
+persist.hide_verifiedbs=1
