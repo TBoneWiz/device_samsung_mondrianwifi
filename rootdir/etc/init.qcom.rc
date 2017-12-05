@@ -613,7 +613,7 @@ on property:sys.boot_completed=1
 
     # write /sys/module/cpu_boost/parameters/boost_ms 20
     write /sys/module/cpu_boost/parameters/sync_threshold 1728000
-    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1497600 1:1497600"
+    write /sys/module/cpu_boost/parameters/input_boost_freq 1497600
     write /sys/module/cpu_boost/parameters/input_boost_ms 60
     chown system system /sys/module/cpu_boost/parameters/input_boost_ms
     chmod 664 /sys/module/cpu_boost/parameters/input_boost_ms
