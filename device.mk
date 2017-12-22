@@ -166,9 +166,13 @@ PRODUCT_COPY_FILES += \
 ifneq ($(SLIM_FULL),true)
 # SuperSU
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/SuperSU/supersu:system/addon.d/supersu \
     $(LOCAL_PATH)/SuperSU/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
-    $(LOCAL_PATH)/BusyBox/UPDATE-BusyBox.zip:system/addon.d/UPDATE-BusyBox.zip \
     $(LOCAL_PATH)/SuperSU/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
+# BusyBox
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/BusyBox/UPDATE-BusyBox.zip:system/addon.d/UPDATE-BusyBox.zip
 
 # Screen binary
 PRODUCT_COPY_FILES += \
