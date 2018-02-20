@@ -41,7 +41,6 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
 ifeq ($(SLIM_FULL),true)
@@ -183,6 +182,7 @@ PRODUCT_BOOTANIMATION := device/samsung/mondrianwifi/bootanimation/bootanimation
 ifneq ($(TARGET_ARCH),arm64)
 # Viper4Android
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_policy.conf.v4a:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/Viper4Android/addon.d/23-v4a.sh:system/addon.d/23-v4a.sh \
     $(LOCAL_PATH)/Viper4Android/etc/init.d/50viper:system/etc/init.d/55viper \
     $(LOCAL_PATH)/Viper4Android/lib/soundfx/libv4a_fx_ics.so:system/lib/soundfx/libv4a_fx_ics.so \
@@ -190,6 +190,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/Viper4Android/xbin/sepolicy-inject:system/xbin/sepolicy-inject \
     $(LOCAL_PATH)/Viper4Android/xbin/sesearch:system/xbin/sesearch \
     $(LOCAL_PATH)/Viper4Android/priv-app/Viper/ViperFX.apk:system/priv-app/Viper/ViperFX.apk
+else
+    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
 endif
 endif
 
