@@ -174,7 +174,30 @@ PRODUCT_COPY_FILES += \
 
 # Screen binary
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/screen/screen:system/bin/screen
+    $(LOCAL_PATH)/screen/screen:system/bin/screen \
+    $(LOCAL_PATH)/screen/terminfo/a/ansi:system/etc/terminfo/a/ansi \
+    $(LOCAL_PATH)/screen/terminfo/c/cons25:system/etc/terminfo/c/cons25 \
+    $(LOCAL_PATH)/screen/terminfo/c/cygwin:system/etc/terminfo/c/cygwin \
+    $(LOCAL_PATH)/screen/terminfo/d/dumb:system/etc/terminfo/d/dumb \
+    $(LOCAL_PATH)/screen/terminfo/l/linux:system/etc/terminfo/l/linux \
+    $(LOCAL_PATH)/screen/terminfo/s/screen:system/etc/terminfo/s/screen \
+    $(LOCAL_PATH)/screen/terminfo/s/screen-256color:system/etc/terminfo/s/screen-256color \
+    $(LOCAL_PATH)/screen/terminfo/s/sun:system/etc/terminfo/s/sun \
+    $(LOCAL_PATH)/screen/terminfo/u/unknown:system/etc/terminfo/u/unknown \
+    $(LOCAL_PATH)/screen/terminfo/v/vt52:system/etc/terminfo/v/vt52 \
+    $(LOCAL_PATH)/screen/terminfo/v/vt100:system/etc/terminfo/v/vt100 \
+    $(LOCAL_PATH)/screen/terminfo/v/vt102:system/etc/terminfo/v/vt102 \
+    $(LOCAL_PATH)/screen/terminfo/v/vt220:system/etc/terminfo/v/vt220 \
+    $(LOCAL_PATH)/screen/terminfo/v/vt220:system/etc/terminfo/v/vt220 \
+    $(LOCAL_PATH)/screen/terminfo/w/wsvt25:system/etc/terminfo/w/wsvt25 \
+    $(LOCAL_PATH)/screen/terminfo/w/wsvt25m:system/etc/terminfo/w/wsvt25m \
+    $(LOCAL_PATH)/screen/terminfo/x/xterm:system/etc/terminfo/x/xterm \
+    $(LOCAL_PATH)/screen/terminfo/x/xterm-256color:system/etc/terminfo/x/xterm-256color \
+    $(LOCAL_PATH)/screen/terminfo/x/xterm-color:system/etc/terminfo/x/xterm-color \
+    $(LOCAL_PATH)/screen/terminfo/x/xterm-debian:system/etc/terminfo/x/xterm-debian \
+    $(LOCAL_PATH)/screen/terminfo/x/xterm-mono:system/etc/terminfo/x/xterm-mono \
+    $(LOCAL_PATH)/screen/terminfo/x/xterm-vt220:system/etc/terminfo/x/xterm-vt220 \
+    $(LOCAL_PATH)/screen/terminfo/x/xterm-xfree86:system/etc/terminfo/x/xterm-xfree86
 
 # Custom bootanimation
 PRODUCT_BOOTANIMATION := device/samsung/mondrianwifi/bootanimation/bootanimation.zip
