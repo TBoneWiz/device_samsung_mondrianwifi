@@ -17,7 +17,7 @@
   {
     "repository": "TBoneWiz/proprietary_vendor_samsung",
     "target_path": "vendor/samsung",
-    "branch": "cm-13.0"
+    "branch": "mm6.0"
   },
   {
     "repository": "SlimRoms/hardware_samsung",
