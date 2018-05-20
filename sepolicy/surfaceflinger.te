@@ -1,2 +1,4 @@
+allow surfaceflinger shell_data_file:dir search;
+allow surfaceflinger shell_data_file:file { open getattr read };
 allow surfaceflinger surfaceflinger_sysfs:file rw_file_perms;
 
