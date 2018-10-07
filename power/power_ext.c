@@ -21,6 +21,7 @@
 
 #define LOG_TAG "PowerHAL_H_Ext"
 #include <utils/Log.h>
+#include <stdlib.h>
 
 #define MAX_INPUTS 20
 #define INPUT_PREFIX "/sys/class/input/input"
