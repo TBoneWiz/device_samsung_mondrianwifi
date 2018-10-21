@@ -24,7 +24,7 @@
         <item>SBC</item>
         <item>SBC HD</item>
         <item>SBC HD+</item>
-        <item>AAC</item>
+        <!-- <item>AAC</item> -->
     </string-array>
 
     <!-- BT Encoder values for Developer Settings. -->
@@ -40,6 +40,6 @@
         <!-- Do not translate. -->
         <item>4</item>
         <!-- Do not translate. -->
-        <item>5</item>
+        <!-- <item>5</item> -->
     </string-array>
 </resources>
