@@ -24,6 +24,8 @@
         <item>SBC</item>
         <item>SBC HD</item>
         <item>SBC HD+</item>
+        <item>aptX</item>
+        <item>aptX HD</item>
         <!-- <item>AAC</item> -->
     </string-array>
 
@@ -40,6 +42,8 @@
         <!-- Do not translate. -->
         <item>4</item>
         <!-- Do not translate. -->
-        <!-- <item>5</item> -->
+        <item>5</item>
+        <!-- Do not translate. -->
+        <!-- <item>6</item> -->
     </string-array>
 </resources>
