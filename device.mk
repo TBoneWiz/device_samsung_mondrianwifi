@@ -48,15 +48,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
     qcom.hw.aac.encoder=true
 
-# Qualcomm BT aptXHD
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.bt.enableAptXHD=true \
-    persist.bt.a2dp_offload_cap=sbc-aac-aptx-aptXHD
-
-# SBC HD
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.bt.sbc_hd_enabled=1
-
 ifeq ($(SLIM_FULL),true)
 # Use standard audio_effects.conf for full build
 PRODUCT_COPY_FILES += \
