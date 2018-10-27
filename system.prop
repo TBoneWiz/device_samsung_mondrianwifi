@@ -25,6 +25,9 @@ ro.radio.noril=yes
 ro.cwm.forbid_format=/boot,/firmware,/firmware-modem
 ro.cwm.forbid_mount=/boot
 
-# aptX / aptXHD
+# aptX/aptXHD/AAC offload
 persist.bt.a2dp_offload_cap=sbc-aac-aptx-aptXHD
 persist.bt.enableAptXHD=true
+
+# BT codec detection
+bluetooth.a2dp_active_codec=0

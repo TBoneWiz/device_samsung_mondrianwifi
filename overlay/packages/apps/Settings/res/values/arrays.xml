@@ -20,7 +20,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- BT Encoder names for Developer Settings. -->
     <string-array name="select_bta_codec_titles">
-        <item>Automatic</item>
+        <item>Auto</item>
         <item>SBC</item>
         <item>SBC HD</item>
         <item>SBC HD+</item>
